@@ -3,10 +3,10 @@ version: '3.3'
 services:
   elevator:
     container_name: elevator_system
-    build: ./Elevator
+    build: .
     command: uvicorn src.api:app --reload --workers 1 --host 0.0.0.0 --port 8000
     volumes:
-      - ./Elevator:/usr/app
+      - .:/usr/app
     ports:
       - 8000:8000
     # environment:
